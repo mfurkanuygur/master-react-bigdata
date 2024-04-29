@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import getApiData, { getAllProducts } from "../request/request"
 import { Link } from "react-router-dom"
+import Loading from "./Loading"
 
 const Homepage = ({ pokemons, setPokemons }) => {
     const [products, setProducts] = useState()
@@ -22,27 +23,29 @@ const Homepage = ({ pokemons, setPokemons }) => {
             setProducts(data)
         })
     }, [])
-    
-    
-    const handleClick=()=>{
-        setCount(count+8)
+
+
+    const handleClick = () => {
+        setCount(count + 8)
         console.log(count)
     }
-      
+
     return (
         <div className="homepage">
             <h1>All Products: {products?.length}</h1>
             <div className="container">
                 {
+                    products &&
                     products?.slice(0, count).map(product => (
                         <div key={product.id} className="pokemon-card">
                             <div className="pokemon-img"><img src={product?.image} alt={product?.title} /></div>
                             <h3>{product.title}</h3>
                         </div>
                     ))
+                    || <Loading />
                 }
-                <button onClick={()=>handleClick()}>see more</button>
             </div>
+            <button onClick={() => handleClick()}>see more</button>
             {/* <h1>Pokemons</h1>
             <div className="container">
                 {
