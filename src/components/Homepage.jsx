@@ -6,7 +6,7 @@ import RenderProduct from "./RenderProduct"
 
 const Homepage = () => {
     const [products, setProducts] = useState()
-    const [count, setCount] = useState(8)
+    const [count, setCount] = useState(10)
 
     useEffect(() => {
         getAllProducts().then(data => {
@@ -26,7 +26,7 @@ const Homepage = () => {
             <div className="container">
                 {
                     products &&
-                    products?.map(product => (
+                    products?.slice(0, count).map(product => (
                         <RenderProduct key={product.id} product={product} />
                     ))
                     || <Loading />
