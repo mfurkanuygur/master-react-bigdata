@@ -218,85 +218,10 @@ body {
     }
 }
 
-
-/* detail */
-.myPokemon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loading{
     width: 100%;
-    height: 100vh;
-    gap: 20px;
-
-}
-
-.myPokemon:has(p) {
-    text-transform: capitalize;
-}
-
-.myPokemon-body {
-    height: 350px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 0 30px;
-
-    background: rgba(255, 255, 255, 0.59);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.1px);
-    -webkit-backdrop-filter: blur(11.1px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.myPokemon-body>div {
-    background: rgba(255, 255, 255, 0.59);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.1px);
-    -webkit-backdrop-filter: blur(11.1px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 20px;
-    margin: 10px 0;
-}
-
-.myPokemon-body h5 {
-    margin: 0;
-    color: #555;
-}
-
-.myPokemon-body h1 {
-    margin: 8px 0;
-    color: #333;
-}
-
-.myPokemon-body p {
-    margin: 4px 0;
-    color: #777;
-}
-
-.myPokemon-specs {
-    display: flex;
-    padding: 10px 20px;
-    margin: 20px 0;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.59);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.1px);
-    -webkit-backdrop-filter: blur(11.1px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.myPokemon-specs>div {
-    margin-right: 16px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-
-}
-
-.myPokemon-specs p {
-    margin: 4px 0;
-    color: #777;
+    height: 500px;
 }
