@@ -16,7 +16,7 @@ const Homepage = () => {
 
 
     const handleClick = () => {
-        setCount(count + 8)
+        setCount(count + 10)
         console.log(count)
     }
 
