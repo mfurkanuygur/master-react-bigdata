@@ -1,10 +1,12 @@
 import './App.css'
-import Router from './routes/Router'
+import Homepage from './components/Homepage'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
   return (
     <main>
-      <Router  />
+      <Navbar />
+      <Homepage />
     </main>
   )
 }

@@ -1,9 +1,5 @@
-// const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
-// const pokeUrl = `https://pokeapi.co/api/v2/pokemon/`
-
 const URL = "https://us-east-2.aws.neurelo.com/rest/products"
 const APIKEY = "neurelo_9wKFBp874Z5xFw6ZCfvhXfFXS+qEk0CNKigOZhTvsKrXiEJK9aDujgjK5TMVNC7B5beDFKhDF9bEKuCXeuAb/ulD3z4HN1DUVy0ygEdwfRsCe3g+pHL+XmJDQD8JOWa3jw0ALUJzEWYCoEJDzJj1LeNElodKD2lCqSgMx0Prbxw5mTcnDqMuxp02o6K2hJUY_lLfGmru/o7M5NSDdc/jQh0pijzEY3VG9J30d+wam0j8="
-
 
 export  const getAllProducts = async () => {
     const url = URL;
@@ -35,26 +31,7 @@ export  const getAllProducts = async () => {
         console.error(error);
     }
 }
-// const getApiData = async () => {
-//     const arr = [];
 
-//     const fetchData = async (i) => {
-//         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-//         const result = await response.json();
-//         arr.push(result);
-//     };
-
-//     // Create an array of promises for each fetchData call
-//     const promises = [];
-//     for (let i = 1; i <= 1000; i++) {
-//         promises.push(fetchData(i));
-//     }
-
-//     // Wait for all promises to resolve using Promise.all
-//     await Promise.all(promises);
-
-//     return arr;
-// };
 
 export default getAllProducts;
 

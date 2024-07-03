@@ -2,24 +2,14 @@ import { useEffect, useState } from "react"
 import getApiData, { getAllProducts } from "../request/request"
 import { Link } from "react-router-dom"
 import Loading from "./Loading"
+import RenderProduct from "./RenderProduct"
 
-const Homepage = ({ pokemons, setPokemons }) => {
+const Homepage = () => {
     const [products, setProducts] = useState()
     const [count, setCount] = useState(8)
-    const [bottom, setBottom] = useState(false); // En altta mı kontrolü
-    // useEffect(() => {
-    //     !pokemons &&
-    //         getApiData().then(items => {
-    //             setPokemons(items.sort((a, b) => {
-    //                 return a.id - b.id;
-    //             }));
-    //         })
-    // }, [])
+
     useEffect(() => {
         getAllProducts().then(data => {
-            // setPokemons(items.sort((a, b) => {
-            //     return a.id - b.id;
-            // }));
             setProducts(data)
         })
     }, [])
@@ -32,40 +22,17 @@ const Homepage = ({ pokemons, setPokemons }) => {
 
     return (
         <div className="homepage">
-            <h1>All Products: {products?.length}</h1>
+            {/* <h1>All Products: {products?.length}</h1> */}
             <div className="container">
                 {
                     products &&
-                    products?.slice(0, count).map(product => (
-                        <div key={product.id} className="pokemon-card">
-                            <div className="pokemon-img"><img src={product?.image} alt={product?.title} /></div>
-                            <h3>{product.title}</h3>
-                        </div>
+                    products?.map(product => (
+                        <RenderProduct key={product.id} product={product} />
                     ))
                     || <Loading />
                 }
             </div>
-            <button onClick={() => handleClick()}>see more</button>
-            {/* <h1>Pokemons</h1>
-            <div className="container">
-                {
-                    pokemons?.map((pokemon, index) => (
-                        <Link to={pokemon?.name} key={index}>
-                            <div className="pokemon-card">
-                                <div className="pokemon-img">
-                                  
-                                    <img src={pokemon?.sprites?.other?.["official-artwork"]?.front_default} />
-
-
-                                </div>
-                                <div className="pokemon-title">
-                                    <p>{pokemon?.name}</p>
-                                </div>
-                            </div>
-                        </Link>
-                    ))
-                }
-            </div> */}
+            <div className="see-more-container"><button className="see-more-button" onClick={() => handleClick()}>see more</button></div>
         </div>
     )
 }
