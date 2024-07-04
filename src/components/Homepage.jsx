@@ -23,16 +23,21 @@ const Homepage = () => {
     return (
         <div className="homepage">
             {/* <h1>All Products: {products?.length}</h1> */}
-            <div className="container">
-                {
-                    products &&
-                    products?.slice(0, count).map(product => (
+
+            {
+                products &&
+                <div className="container">
+                    {products?.slice(0, count).map(product => (
                         <RenderProduct key={product.id} product={product} />
-                    ))
-                    || <Loading />
-                }
-            </div>
-            <div className="see-more-container"><button className="see-more-button" onClick={() => handleClick()}>see more</button></div>
+                    ))}
+                </div>
+                || <Loading />
+            }
+            {
+                products &&
+
+                <div className="see-more-container"><button className="see-more-button" onClick={() => handleClick()}>see more</button></div>
+            }
         </div>
     )
 }

@@ -13,7 +13,7 @@ const DesktopNavbar = () => {
                 </a>
                 <h1>MasterEcommerce</h1>
                 <a href="#" className='page-link'>
-                    <p className='page-link-title'>info</p>
+                    <p className='page-link-title'>About</p>
                 </a>
                 <a href="#" className='page-link'>
                     <p className='page-link-title'>contact</p>
